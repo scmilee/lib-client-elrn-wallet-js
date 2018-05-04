@@ -1,0 +1,16 @@
+{
+  "name": "lib-client-elrn-wallet",
+  "version": "1.0.0",
+  "description": "cryptocurrency utilities",
+  "main": "index.js",
+  "scripts": {
+      "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "urlx": "keybase://team/elrn_wallet/lib-client-elrn-wallet-js",
+    "url": "ssb://%AKfWYawCzp7ikMq9woft3ioCbQxW854BF5S8mNxsZOQ=.sha256"
+  },
+  "author": "Cole Albon",
+  "license": "ISC"
+}
