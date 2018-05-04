@@ -1,10 +1,11 @@
-const bip44coins = require('bip44-constants')
+const bip44Coins = require('bip44-constants')
 
 export default class Elrn {
     constructor(options) {
-        let defaultOptions = {
-            bip44coins: () => bip44coins
-        };
-        this.options = Object.call(defaultOptions,options);
+        let defaultOptions = {};
+        this.options = Object.call(defaultOptions, options);
+    }
+    getCoins () {
+        return bip44Coins;
     }
 };

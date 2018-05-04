@@ -4,7 +4,7 @@
   "description": "cryptocurrency utilities",
   "main": "index.js",
   "scripts": {
-      "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js"
+    "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js"
   },
   "repository": {
     "type": "git",
@@ -12,5 +12,15 @@
     "url": "ssb://%AKfWYawCzp7ikMq9woft3ioCbQxW854BF5S8mNxsZOQ=.sha256"
   },
   "author": "Cole Albon",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  },
+  "dependencies": {
+    "bip44-constants": "^5.0.0"
+  }
 }
