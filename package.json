@@ -18,9 +18,11 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
+    "coininfo": "^4.0.0",
     "mocha": "^5.1.1"
   },
   "dependencies": {
-    "bip44-constants": "^5.0.0"
+    "bip44-constants": "^5.0.0",
+    "coinkey": "^2.0.0"
   }
 }

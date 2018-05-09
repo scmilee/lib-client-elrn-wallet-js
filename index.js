@@ -1,3 +1,4 @@
+import createKeypair from './src/createKeypair.js';
 const bip44Coins = require('bip44-constants')
 
 export default class Elrn {
@@ -7,5 +8,8 @@ export default class Elrn {
     }
     getCoins () {
         return bip44Coins;
+    }
+    createKeypair (coinInfo) {
+        return createKeypair.call(this.options, coinInfo);
     }
 };
