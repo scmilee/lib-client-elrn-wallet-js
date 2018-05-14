@@ -1,4 +1,3 @@
-const bip39 = require('bip39')
 const crypto = require('crypto')
 
 export default function createSeed() {

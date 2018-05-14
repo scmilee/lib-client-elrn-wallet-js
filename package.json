@@ -22,7 +22,6 @@
     "mocha": "^5.1.1"
   },
   "dependencies": {
-    "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
     "coinkey": "^2.0.0"
   }
