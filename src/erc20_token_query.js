@@ -1,6 +1,4 @@
-
 const axios = require('axios');
-
 const ethplorerApiKey = 'freekey';
 
 const getTokenContractInfo = function (contractAddress) {
@@ -17,7 +15,6 @@ const getTokenContractInfo = function (contractAddress) {
         }
     });
 }
-
 
 const getAddressInfo = function (walletAddress) {
     if(!walletAddress) {return Promise.reject(new Error('called getErc20AddressInfo without providing address'))}
