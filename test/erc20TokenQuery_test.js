@@ -6,7 +6,7 @@ const knownAssets = require('./config/knownAssets.js');
 const erc20 = require('../src/erc20_token_query');
 
 suite('erc20 token query', function() {
-    this.timeout(3000);
+    this.timeout(10000);
     test('fails if no address is provided', (done) => {
         erc20.getTokenContractInfo()
         .then(() => {
