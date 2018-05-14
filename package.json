@@ -1,6 +1,6 @@
 {
   "name": "lib-client-elrn-wallet",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "cryptocurrency utilities",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,11 @@
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "coininfo": "^4.0.0",
+    "is-buffer": "^2.0.2",
     "mocha": "^5.1.1"
   },
   "dependencies": {
+    "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
     "coinkey": "^2.0.0"
   }
