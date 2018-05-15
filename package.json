@@ -4,7 +4,8 @@
   "description": "cryptocurrency utilities",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js"
+    "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js",
+    "integration-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/*_test.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
     "mocha": "^5.1.1"
   },
   "dependencies": {
+    "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
+    "bitcoinjs-lib": "^3.3.2",
     "coinkey": "^2.0.0"
   }
 }

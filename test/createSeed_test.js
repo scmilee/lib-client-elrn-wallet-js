@@ -3,6 +3,7 @@ process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const isBuffer = require('is-buffer')
 const assert = chai.assert;
+import createSeed from '../src/createSeed.js';
 import Elrn from '..';
 
 suite('createSeed', function() {

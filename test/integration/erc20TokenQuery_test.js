@@ -2,8 +2,8 @@
 process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const assert = chai.assert;
-const knownAssets = require('./config/knownAssets.js');
-const erc20 = require('../src/erc20_token_query');
+const knownAssets = require('../config/knownAssets.js');
+const erc20 = require('../../src/erc20_token_query');
 
 suite('erc20 token query', function() {
     this.timeout(10000);
