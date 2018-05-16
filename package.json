@@ -27,6 +27,8 @@
     "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
     "bitcoinjs-lib": "^3.3.2",
-    "coinkey": "^2.0.0"
+    "coinkey": "^2.0.0",
+    "node-fetch": "^2.1.2",
+    "promise-retry": "^1.1.1"
   }
 }

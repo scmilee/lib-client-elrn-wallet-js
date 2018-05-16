@@ -2,22 +2,13 @@
 process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const assert = chai.assert;
-const knownAssets = require('../config/knownAssets.js');
-const erc20 = require('../../src/erc20_token_query');
+const knownAssets = require('./config/knownAssets.js');
+const erc20 = require('../src/erc20_token_query');
 
-suite('erc20 token query', function() {
-    this.timeout(10000);
-    test('fails if no address is provided', (done) => {
-        erc20.getTokenContractInfo()
-        .then(() => {
-          done(new Error('Expected method to reject.'))
-        })
-        .catch((err) => {
-          assert.isDefined(err);
-          done();
-        })
-        .catch(done);
-    });
+
+suite('erc20 token query integration ', function() {
+    this.timeout(5000);
+    this.retries(8);
     test('api will retreive ERC20 token information for wallet address', async() => {
         const ethAddress = '0x3028beecaf98393d144876bc533dbdfac2116739'
         const result = await erc20.getAddressInfo(ethAddress);
@@ -25,6 +16,7 @@ suite('erc20 token query', function() {
     });
     test('api functions for Firstblood token', async() => {
         const result = await erc20.getTokenContractInfo(knownAssets.FIRST.contractAddress);
+        // console.log('in test:', result.name);
         assert.equal(result.name, 'Firstblood');
     });
     test('api functions for Aragon token', async() => {

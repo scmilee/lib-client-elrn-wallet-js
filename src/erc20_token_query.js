@@ -1,12 +1,14 @@
 const axios = require('axios');
 const ethplorerApiKey = 'freekey';
+const promiseRetry = require('promise-retry');
+import fetch from 'node-fetch';
 
 const getTokenContractInfo = function (contractAddress) {
     if(!contractAddress) {return Promise.reject(new Error('called getErc20TokenContractInfo without providing address'))}
     return new Promise((resolve, reject) => {
         try {
             const url = `https://api.ethplorer.io/getTokenInfo/${contractAddress}?apiKey=${ethplorerApiKey}`
-            axios.get(url)
+            return axios.get(url)
                 .then(function(response) {
                     resolve(response.data);
                 })
@@ -21,7 +23,7 @@ const getAddressInfo = function (walletAddress) {
     return new Promise((resolve, reject) => {
         try {
             const url = `https://api.ethplorer.io/getAddressInfo/${walletAddress}?apiKey=${ethplorerApiKey}`
-            axios.get(url)
+            return axios.get(url)
                 .then(function(response){
                     resolve(response.data);
                 });
