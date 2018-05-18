@@ -3,15 +3,12 @@ import createSeed from './src/createSeed.js';
 import listNetworks from './src/listNetworks.js'
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
-// const bip44Coins = require('bip44-constants');
+import seedToAddress from './src/seedToAddress.js'
 
 export default class Elrn {
     constructor(options) {
         let defaultOptions = {};
         this.options = Object.call(defaultOptions, options);
-    }
-    getCoins () {
-        return bip44Coins;
     }
     createKeypair (coinInfo) {
         return createKeypair.call(this.options, coinInfo);
@@ -27,5 +24,8 @@ export default class Elrn {
     }
     mnemonicToSeed (mnemonic) {
         return mnemonicToSeed.call(this.options, mnemonic);
+    }
+    seedToAddress (seed, derivePath) {
+        return seedToAddress.call(this.options, seed, derivePath);
     }
 };
