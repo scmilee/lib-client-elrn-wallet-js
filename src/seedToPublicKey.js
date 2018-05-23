@@ -10,7 +10,7 @@ export default function seedToAddress(seed, derivePathStr, network ) {
             var root = bitcoin.HDNode.fromSeedBuffer(seed, bitcoin.networks[network]);
             let child = root.derivePath(derivePathStr)
             var keyPair = child.keyPair;
-            resolve(keyPair.getAddress().toString());
+            resolve(keyPair.getPublicKeyBuffer().toString('hex'));
         } catch (err) {
             reject(err);
         }

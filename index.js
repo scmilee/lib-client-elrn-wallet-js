@@ -4,6 +4,7 @@ import listNetworks from './src/listNetworks.js'
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
 import seedToAddress from './src/seedToAddress.js'
+import seedToPublicKey from './src/seedToPublicKey.js'
 
 export default class Elrn {
     constructor(options) {
@@ -25,7 +26,10 @@ export default class Elrn {
     mnemonicToSeed (mnemonic) {
         return mnemonicToSeed.call(this.options, mnemonic);
     }
-    seedToAddress (seed, derivePath) {
-        return seedToAddress.call(this.options, seed, derivePath);
+    seedToAddress (seed, derivePath, network) {
+        return seedToAddress.call(this.options, seed, derivePath, network);
+    }
+    seedToPublicKey (seed, derivePath, network) {
+        return seedToPublicKey.call(this.options, seed, derivePath, network);
     }
 };

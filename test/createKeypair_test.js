@@ -4,20 +4,22 @@ const chai = require('chai');
 const assert = chai.assert;
 import Elrn from '..';
 
+var bitcoin = require('bitcoinjs-lib')
+
 suite('createKeypair', function() {
-    const coinInfo = require('coininfo')
     const config = require(__dirname + '/config/options.js');
     const elrnClient = new Elrn(config)
     test('createKeypair creates blackcoin', function() {
-        const coin = 'blackcoin';
-        var cinfo = coinInfo(coin).versions;
-        elrnClient.createKeypair(cinfo)
+        var network = bitcoin.networks['blackcoin']
+        elrnClient.createKeypair(network)
         .then((keypair) => {
             assert.notEqual(keypair.publicAddress, undefined)
             assert.notEqual(keypair.privateWif, undefined)
+            console.log(keypair.publicAddress)
             return
         })
     });
+    /*
     test('createKeypair creates bitcoin', function() {
         const coin = 'bitcoin';
         var cinfo = coinInfo(coin).versions;
@@ -168,4 +170,5 @@ suite('createKeypair', function() {
             return
         })
     });
+    */
 });
