@@ -109,5 +109,15 @@ module.exports = {
     pubKeyHash: 0x1e,
     scriptHash: 0x16,
     wif: 0x9e
+  },
+  bgold : {
+    messagePrefix: 'unused',
+      bip32: {
+        public: 0x0488b21e,
+        private: 0x0488ade4
+      },
+      pubKeyHash: 38,
+      scriptHash: 23,
+      wif: 128
   }
 }

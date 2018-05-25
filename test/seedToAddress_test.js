@@ -80,6 +80,35 @@ suite('seedToAddress', function() {
             assert.equal(address, 'D5MfWuxRhPpL6BoST1gHwkUL8sEqneitqo')
         })
     });
+    test('bitcoin gold address', function() {
+        // calcForDerivationPath()
+        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
+        const config = require(__dirname + '/config/options.js');
+        const elrnClient = new Elrn(config)
+        //spring range position vocal foot tilt drastic diet tube song debris excite
+        let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
+        let derivePath = "m/0/0"
+        return elrnClient.seedToAddress(seed, derivePath, 'bgold')
+        .then((address) => {
+            assert.equal(typeof address,  'string')
+            assert.equal(address, 'GLbFEsH33fEn7iQFPNSVW52kPTAUbCieNu')
+        })
+    });
+
+    // test('bitcoin cash address', function() {
+    //     // calcForDerivationPath()
+    //     // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
+    //     const config = require(__dirname + '/config/options.js');
+    //     const elrnClient = new Elrn(config)
+    //     //spring range position vocal foot tilt drastic diet tube song debris excite
+    //     let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
+    //     let derivePath = "m/44'/145'/0'/0/0"
+    //     return elrnClient.seedToAddress(seed, derivePath, 'bitcoin')
+    //     .then((address) => {
+    //         assert.equal(typeof address,  'string')
+    //         assert.equal(address, 'D5MfWuxRhPpL6BoST1gHwkUL8sEqneitqo')
+    //     })
+    // });
     // test('zcash address', function() {
     //   // calcForDerivationPath()
     //   // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
