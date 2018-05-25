@@ -129,5 +129,15 @@ module.exports = {
     pubKeyHash: 0x19,
     scriptHash: 0x55,
     wif: 0x99
+  },
+  clam : {
+    messagePrefix: 'unused',
+    bip32: {
+      public: 0xa8c26d64,
+      private: 0xa8c17826
+    },
+    pubKeyHash: 0x89,
+    scriptHash: 0x00, // TODO set this correctly
+    wif: 0x85
   }
 }
