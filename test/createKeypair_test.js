@@ -9,16 +9,16 @@ var bitcoin = require('bitcoinjs-lib')
 suite('createKeypair', function() {
     const config = require(__dirname + '/config/options.js');
     const elrnClient = new Elrn(config)
-    test('createKeypair creates blackcoin', function() {
-        var network = bitcoin.networks['blackcoin']
-        elrnClient.createKeypair(network)
-        .then((keypair) => {
-            assert.notEqual(keypair.publicAddress, undefined)
-            assert.notEqual(keypair.privateWif, undefined)
-            console.log(keypair.publicAddress)
-            return
-        })
-    });
+    // test('createKeypair creates blackcoin', function() {
+    //     var network = bitcoin.networks['blackcoin']
+    //     elrnClient.createKeypair(network)
+    //     .then((keypair) => {
+    //         assert.notEqual(keypair.publicAddress, undefined)
+    //         assert.notEqual(keypair.privateWif, undefined)
+    //         console.log(keypair.publicAddress)
+    //         return
+    //     })
+    // });
     /*
     test('createKeypair creates bitcoin', function() {
         const coin = 'bitcoin';
