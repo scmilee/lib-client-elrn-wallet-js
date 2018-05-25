@@ -7,7 +7,7 @@ const erc20 = require('../src/erc20_token_query');
 
 
 suite('erc20 token query', function() {
-    test(' Token Contract fails if no address is provided', (done) => {
+    test('Token Contract fails if no address is provided', (done) => {
         erc20.getTokenContractInfo()
         .then(() => {
           done(new Error('Expected method to reject.'))

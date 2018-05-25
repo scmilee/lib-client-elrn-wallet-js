@@ -39,8 +39,6 @@ suite('seedToAddress', function() {
     //     .catch((error) => assert.equal(error.message, 'Expected BIP32 derivation path, got undefined'))
     // });
     test('bitcoin address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -53,8 +51,6 @@ suite('seedToAddress', function() {
         })
     });
     test('litecoin address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -67,8 +63,6 @@ suite('seedToAddress', function() {
         })
     });
     test('dogecoin address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -81,8 +75,6 @@ suite('seedToAddress', function() {
         })
     });
     test('bitcoin gold address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -95,8 +87,6 @@ suite('seedToAddress', function() {
         })
     });
     test('blackcoin address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -109,8 +99,6 @@ suite('seedToAddress', function() {
         })
     });
     test('clam address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -123,8 +111,6 @@ suite('seedToAddress', function() {
         })
     });
     test('dash address', function() {
-        // calcForDerivationPath()
-        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
@@ -136,32 +122,16 @@ suite('seedToAddress', function() {
             assert.equal(address, 'XfmnvKyrj6vrBAJy2eZ8f45HPt3xTB6X29')
         })
     });
-
-    // test('bitcoin cash address', function() {
-    //     // calcForDerivationPath()
-    //     // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
-    //     const config = require(__dirname + '/config/options.js');
-    //     const elrnClient = new Elrn(config)
-    //     //spring range position vocal foot tilt drastic diet tube song debris excite
-    //     let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
-    //     let derivePath = "m/44'/145'/0'/0/0"
-    //     return elrnClient.seedToAddress(seed, derivePath, 'bitcoin')
-    //     .then((address) => {
-    //         assert.equal(typeof address,  'string')
-    //         assert.equal(address, 'D5MfWuxRhPpL6BoST1gHwkUL8sEqneitqo')
-    //     })
-    // });
-    // test('zcash address', function() {
-    //   // calcForDerivationPath()
-    //   // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
-    //     const config = require(__dirname + '/config/options.js');
-    //     const elrnClient = new Elrn(config)
-    //     let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
-    //     let derivePath = "m/44'/133'/0'/0/0"
-    //     return elrnClient.seedToAddress(seed, derivePath, 'zcash')
-    //     .then((address) => {
-    //         assert.equal(typeof address,  'string')
-    //         assert.equal(address, 't1JoDFCnfjWTmBTEgVQgLjBT2xRhUo71LUa')
-    //     })
-    // });
+    test('digibyte address', function() {
+        const config = require(__dirname + '/config/options.js');
+        const elrnClient = new Elrn(config)
+        //spring range position vocal foot tilt drastic diet tube song debris excite
+        let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
+        let derivePath = "m/44'/20'/0'/0/0"
+        return elrnClient.seedToAddress(seed, derivePath, 'digibyte')
+        .then((address) => {
+            assert.equal(typeof address,  'string')
+            assert.equal(address, 'DBWNN48Gez6rCsUBuEp4fsoYYbP5u98xV3')
+        })
+    });
 });

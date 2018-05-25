@@ -1,3 +1,5 @@
+// list of coins from Ian Coleman's bip39 cross referenced with shapeshift
+// https://raw.githubusercontent.com/iancoleman/bip39/master/src/js/bitcoinjs-extensions.js
 module.exports = {
   bitcoin: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -149,5 +151,15 @@ module.exports = {
     pubKeyHash: 0x4c,
     scriptHash: 0x10,
     wif: 0xcc
+  },
+  digibyte: {
+    messagePrefix: '\x18DigiByte Signed Message:\n',
+    bip32: {
+      public: 0x0488B21E,
+      private: 0x0488ADE4,
+    },
+    pubKeyHash: 0x1e,
+    scriptHash: 0x05,
+    wif: 0x80,
   }
 }
