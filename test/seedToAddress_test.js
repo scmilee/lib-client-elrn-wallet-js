@@ -122,6 +122,20 @@ suite('seedToAddress', function() {
             assert.equal(address, 'xLqjAxG1wNHKtC9cMMbseHaFJKTNdXfKLS')
         })
     });
+    test('dash address', function() {
+        // calcForDerivationPath()
+        // https://github.com/iancoleman/bip39/blob/master/src/js/index.js
+        const config = require(__dirname + '/config/options.js');
+        const elrnClient = new Elrn(config)
+        //spring range position vocal foot tilt drastic diet tube song debris excite
+        let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
+        let derivePath = "m/44'/5'/0'/0/0"
+        return elrnClient.seedToAddress(seed, derivePath, 'dash')
+        .then((address) => {
+            assert.equal(typeof address,  'string')
+            assert.equal(address, 'XfmnvKyrj6vrBAJy2eZ8f45HPt3xTB6X29')
+        })
+    });
 
     // test('bitcoin cash address', function() {
     //     // calcForDerivationPath()

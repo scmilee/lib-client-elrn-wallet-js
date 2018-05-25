@@ -90,7 +90,7 @@ module.exports = {
         wif: 0xb0
     }
   },
-  zcash : {
+  zcash: {
     messagePrefix: '\x18Zcash Signed Message:\n',
     bip32: {
         public: 0x0488B21E,
@@ -100,7 +100,7 @@ module.exports = {
     scriptHash: 0x1CBD,
     wif: 0x80
   },
-  dogecoin : {
+  dogecoin: {
     messagePrefix: '\x19Dogecoin Signed Message:\n',
     bip32: {
       public: 0x02facafd,
@@ -110,7 +110,7 @@ module.exports = {
     scriptHash: 0x16,
     wif: 0x9e
   },
-  bgold : {
+  bgold: {
     messagePrefix: 'unused',
       bip32: {
         public: 0x0488b21e,
@@ -120,7 +120,7 @@ module.exports = {
       scriptHash: 23,
       wif: 128
   },
-  blackcoin : {
+  blackcoin: {
     messagePrefix: '\x18BlackCoin Signed Message:\n',
     bip32: {
       public: 0x02CFBEDE,
@@ -130,7 +130,7 @@ module.exports = {
     scriptHash: 0x55,
     wif: 0x99
   },
-  clam : {
+  clam: {
     messagePrefix: 'unused',
     bip32: {
       public: 0xa8c26d64,
@@ -139,5 +139,15 @@ module.exports = {
     pubKeyHash: 0x89,
     scriptHash: 0x00, // TODO set this correctly
     wif: 0x85
+  },
+  dash: {
+    messagePrefix: 'unused',
+    bip32: {
+      public: 0x0488b21e,
+      private: 0x0488ade4
+    },
+    pubKeyHash: 0x4c,
+    scriptHash: 0x10,
+    wif: 0xcc
   }
 }
