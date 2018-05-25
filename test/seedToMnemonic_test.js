@@ -3,7 +3,6 @@ process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const isBuffer = require('is-buffer')
 const assert = chai.assert;
-//import seedToMnemonic from '../src/seedToMnemonic.js';
 import Elrn from '..';
 
 suite('seedToMnemonic', function() {
