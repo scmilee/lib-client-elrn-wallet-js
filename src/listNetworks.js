@@ -7,8 +7,8 @@ export default function listNetworks() {
             bitcoin.networks = Object.assign(bitcoin.networks, networksExtensions)
             let networksArray = []
             Object.keys(bitcoin.networks).map((networkName) => {
-                const jsonl = `{${networkName}: ${bitcoin.networks[networkName]}}`
-                networksArray.push(jsonl);
+                const networkEntry = Object.assign({id: networkName}, bitcoin.networks[networkName])
+                networksArray.push(networkEntry);
             })
             resolve(networksArray);
         } catch (err) {
