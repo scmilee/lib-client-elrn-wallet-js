@@ -8,6 +8,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 0,
         pubKeyHash: 0x00,
         scriptHash: 0x05,
         wif: 0x80,
@@ -43,6 +44,7 @@ module.exports = {
             public: 0x043587cf,
             private: 0x04358394
         },
+        bip44: 1,
         pubKeyHash: 0x6f,
         scriptHash: 0xc4,
         wif: 0xef,
@@ -77,6 +79,7 @@ module.exports = {
             public: 0x019da462,
             private: 0x019d9cfe
         },
+        bip44: 2,
         pubKeyHash: 0x30,
         scriptHash: 0x32,
         wif: 0xb0,
@@ -98,6 +101,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 133,
         pubKeyHash: 0x1CB8,
         scriptHash: 0x1CBD,
         wif: 0x80
@@ -108,6 +112,7 @@ module.exports = {
             public: 0x02facafd,
             private: 0x02fac398
         },
+        bip44: 3,
         pubKeyHash: 0x1e,
         scriptHash: 0x16,
         wif: 0x9e
@@ -118,9 +123,10 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
-        pubKeyHash: 38,
-        scriptHash: 23,
-        wif: 128
+        bip44: 156,
+        pubKeyHash: 0x26,
+        scriptHash: 0x17,
+        wif: 0x80
     },
     blackcoin: {
         messagePrefix: '\x18BlackCoin Signed Message:\n',
@@ -128,6 +134,7 @@ module.exports = {
             public: 0x02CFBEDE,
             private: 0x02CFBF60
         },
+        bip44: 10,
         pubKeyHash: 0x19,
         scriptHash: 0x55,
         wif: 0x99
@@ -138,6 +145,7 @@ module.exports = {
             public: 0xa8c26d64,
             private: 0xa8c17826
         },
+        bip44: 23,
         pubKeyHash: 0x89,
         scriptHash: 0x00, // TODO set this correctly
         wif: 0x85
@@ -148,6 +156,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 5,
         pubKeyHash: 0x4c,
         scriptHash: 0x10,
         wif: 0xcc
@@ -158,6 +167,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 20,
         pubKeyHash: 0x1e,
         scriptHash: 0x05,
         wif: 0x80,
@@ -168,6 +178,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 101,
         pubKeyHash: 0x26,
         scriptHash: 0x05,
         wif: 0xa6
@@ -178,6 +189,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 22,
         pubKeyHash: 0x32,
         scriptHash: 0x37,
         wif: 0xb0
@@ -188,6 +200,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 200,
         pubKeyHash: 0x00,
         scriptHash: 0x05,
         wif: 0x80,
@@ -198,19 +211,10 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 25,
         pubKeyHash: 0x35,
         scriptHash: 0x05,
         wif: 0xb1,
-    },
-    nubits: {
-        messagePrefix: '\x18Nu Signed Message:\n',
-        bip32: {
-            public: 0x0488b21e,
-            private: 0x0488ade4
-        },
-        pubKeyHash: 0x19,
-        scriptHash: 0x1a,
-        wif: 0x96,
     },
     namecoin: {
         messagePrefix: 'unused',
@@ -218,6 +222,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 7,
         pubKeyHash: 0x34,
         scriptHash: 0x00, // TODO set this correctly
         wif: 0x80
@@ -228,6 +233,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4,
         },
+        bip44: 50,
         pubKeyHash: 0x08,
         scriptHash: 0x14,
         wif: 0x88,
@@ -238,6 +244,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4,
         },
+        bip44: 81,
         pubKeyHash: 0x37,
         scriptHash: 0x05,
         wif: 0xb7,
@@ -248,19 +255,10 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4
         },
+        bip44: 6,
         pubKeyHash: 0x37,
         scriptHash: 0x00, // TODO set this correctly
         wif: 0xb7
-    },
-    reddcoin: {
-        messagePrefix: '\x18Reddcoin Signed Message:\n',
-        bip32: {
-            public: 0x0488B21E,
-            private: 0x0488ADE4,
-        },
-        pubKeyHash: 0x3d,
-        scriptHash: 0x05,
-        wif: 0xbd,
     },
     komodo: {
         messagePrefix: '\x18Komodo Signed Message:\n',
@@ -268,6 +266,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4
         },
+        bip44: 141,
         pubKeyHash: 0x3c,
         scriptHash: 0x55,
         wif: 0xbc
@@ -278,6 +277,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 140,
         pubKeyHash: 0x55,
         scriptHash: 0x7a,
         wif: 0x1c,
@@ -288,6 +288,7 @@ module.exports = {
             public: 0x0488B21E,
             private: 0x0488ADE4,
         },
+        bip44: 129,
         pubKeyHash: 0x46,
         scriptHash: 0x05,
         wif: 0xc6,
@@ -298,6 +299,7 @@ module.exports = {
             public: 0x0488b21e,
             private: 0x0488ade4,
         },
+        bip44: 28,
         pubKeyHash: 0x47,
         scriptHash: 0x05,
         wif: 0x80,
