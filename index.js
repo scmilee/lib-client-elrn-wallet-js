@@ -6,6 +6,7 @@ import mnemonicToSeed from './src/mnemonicToSeed.js'
 import seedToAddress from './src/seedToAddress.js'
 import seedToPublicKey from './src/seedToPublicKey.js'
 import publicKeyToSegwitAddress from './src/publicKeyToSegwitAddress.js'
+import seedPrivateKeyToEthereumAddress from './src/seedPrivateKeyToEthereumAddress.js'
 
 export default class Elrn {
     constructor(options) {
@@ -35,5 +36,8 @@ export default class Elrn {
     }
     publicKeyToSegwitAddress (publicKey, derivePath, network) {
         return publicKeyToSegwitAddress.call(this.options, publicKey, derivePath, network);
+    }
+    seedPrivateKeyToEthereumAddress (seedPrivateKey, derivePath) {
+        return seedPrivateKeyToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
     }
 };
