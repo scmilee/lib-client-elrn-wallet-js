@@ -6,6 +6,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js",
     "integration-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/*_test.js",
+    "shapeshift-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/shapeshift_test.js",
     "deleteme-seed-to-address-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/seedToAddress_test.js"
   },
   "repository": {
@@ -25,13 +26,13 @@
   },
   "dependencies": {
     "@cityofzion/neon-js": "^3.7.3",
+    "@theblock/shapeshift-promise": "0.0.6",
     "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
     "bitcoinjs-lib": "^3.3.2",
     "buffer-from": "^1.0.0",
     "coinkey": "^2.0.0",
     "ethereumjs-wallet": "^0.6.0",
-    "node-fetch": "^2.1.2",
     "promise-retry": "^1.1.1"
   }
 }

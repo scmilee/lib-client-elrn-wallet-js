@@ -7,6 +7,7 @@ import seedToAddress from './src/seedToAddress.js'
 import seedToPublicKey from './src/seedToPublicKey.js'
 import publicKeyToSegwitAddress from './src/publicKeyToSegwitAddress.js'
 import seedPrivateKeyToEthereumAddress from './src/seedPrivateKeyToEthereumAddress.js'
+const shapeshift = require('shapeshift')
 
 export default class Elrn {
     constructor(options) {
@@ -39,5 +40,8 @@ export default class Elrn {
     }
     seedPrivateKeyToEthereumAddress (seedPrivateKey, derivePath) {
         return seedPrivateKeyToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
+    }
+    getRate (pair) {
+        return shapeshift.getRate.call(this.options, pair);
     }
 };
