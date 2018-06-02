@@ -1,5 +1,6 @@
 import createKeypair from './src/createKeypair.js';
 import createSeed from './src/createSeed.js';
+import listPurposes from './src/listPurposes.js'
 import listNetworks from './src/listNetworks.js'
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
@@ -7,7 +8,13 @@ import seedToAddress from './src/seedToAddress.js'
 import seedToPublicKey from './src/seedToPublicKey.js'
 import publicKeyToSegwitAddress from './src/publicKeyToSegwitAddress.js'
 import seedPrivateKeyToEthereumAddress from './src/seedPrivateKeyToEthereumAddress.js'
-const shapeshift = require('shapeshift')
+import exchangeRate from './src/exchangeRate.js'
+import coins from './src/coins.js'
+import depositLimit from './src/depositLimit.js'
+import emailReceipt from './src/emailReceipt.js'
+import isDown from './src/isDown.js'
+import marketInfo from './src/marketInfo.js'
+import recent from './src/recent.js'
 
 export default class Elrn {
     constructor(options) {
@@ -19,6 +26,9 @@ export default class Elrn {
     }
     createSeed () {
         return createSeed.call(this.options);
+    }
+    listPurposes () {
+        return listPurposes.call(this.options);
     }
     listNetworks () {
         return listNetworks.call(this.options);
@@ -41,7 +51,33 @@ export default class Elrn {
     seedPrivateKeyToEthereumAddress (seedPrivateKey, derivePath) {
         return seedPrivateKeyToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
     }
-    getRate (pair) {
-        return shapeshift.getRate.call(this.options, pair);
+    exchangeRate (pair) {
+        return exchangeRate.call(this.options, pair)
     }
+    coins () {
+        return coins.call(this.options);
+    }
+    depositLimit (pair) {
+        return depositLimit.call(this.options, pair);
+    }
+    emailReceipt (emailAddress, txId) {
+        return emailReceipt.call(this.options, emailAddress, txId);
+    }
+    isDown (pair) {
+        return isDown.call(this.options);
+    }
+    marketInfo () {
+        return marketInfo.call(this.options);
+    }
+    recent () {
+        return recent.call(this.options);
+    }
+    /*
+    shift (withdrawalAddress, pair, shapeshiftOptions) {
+        return shapeshift.shift.call(this.options, withdrawalAddress, pair, shapeshiftOptions);
+    }
+    shapeShiftStatus (depositAddress) {
+        return shapeshift.status.call(this.options, depositAddress);
+    }
+    */
 };

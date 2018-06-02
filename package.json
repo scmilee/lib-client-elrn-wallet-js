@@ -26,13 +26,13 @@
   },
   "dependencies": {
     "@cityofzion/neon-js": "^3.7.3",
-    "@theblock/shapeshift-promise": "0.0.6",
     "bip39": "^2.5.0",
     "bip44-constants": "^5.0.0",
     "bitcoinjs-lib": "^3.3.2",
     "buffer-from": "^1.0.0",
     "coinkey": "^2.0.0",
     "ethereumjs-wallet": "^0.6.0",
-    "promise-retry": "^1.1.1"
+    "promise-retry": "^1.1.1",
+    "shapeshift.io": "^1.3.1"
   }
 }
