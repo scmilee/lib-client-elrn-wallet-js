@@ -74,12 +74,36 @@ suite('shapeshift', function() {
         })
     });
     test('shift', function() {
+        this.timeout(60000);
         const config = require(__dirname + '/../config/options.js');
         const elrnClient = new Elrn(config)
-        const walletAddress = '15cFK75kLJhpsY4Gwi4yq9BSy3W56R8FSm'
-        return elrnClient.shift(withdrawalAddress, pair, options)
+        const withdrawalAddress = '0x7229225164025b545f52a3b4c1dfba6c4e34cb1d'
+        const options = {
+          returnAddress: '1LmoNY5vmDkNKDeRqQwSjLksVzQ9GrZysp',
+          amount: '.01'
+        }
+        return elrnClient.shift(withdrawalAddress, 'BTC_ETH', options)
         .then((data) => {
-            
+            assert.isNotNull(data.orderId)
+        })
+    });
+    test('shapeShiftStatus', function() {
+        this.timeout(60000);
+        const config = require(__dirname + '/../config/options.js');
+        const elrnClient = new Elrn(config)
+        const withdrawalAddress = '0x7229225164025b545f52a3b4c1dfba6c4e34cb1d'
+        const options = {
+          returnAddress: '1LmoNY5vmDkNKDeRqQwSjLksVzQ9GrZysp',
+          amount: '.01'
+        }
+        return elrnClient.shift(withdrawalAddress, 'BTC_ETH', options)
+        .then((data) => {
+            assert.isNotNull(data.orderId)
+            elrnClient.shapeShiftStatus(data.deposit)
+            .then((status) => {
+              console.log(status)
+              assert.isNotNull(status)
+            })
         })
     });
 });

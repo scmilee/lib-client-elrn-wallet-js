@@ -1,7 +1,5 @@
 import createKeypair from './src/createKeypair.js';
 import createSeed from './src/createSeed.js';
-import listPurposes from './src/listPurposes.js'
-import listNetworks from './src/listNetworks.js'
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
 import seedToAddress from './src/seedToAddress.js'
@@ -15,6 +13,8 @@ import emailReceipt from './src/emailReceipt.js'
 import isDown from './src/isDown.js'
 import marketInfo from './src/marketInfo.js'
 import recent from './src/recent.js'
+import shift from './src/shift.js'
+import shapeShiftStatus from './src/shapeShiftStatus.js'
 
 export default class Elrn {
     constructor(options) {
@@ -26,12 +26,6 @@ export default class Elrn {
     }
     createSeed () {
         return createSeed.call(this.options);
-    }
-    listPurposes () {
-        return listPurposes.call(this.options);
-    }
-    listNetworks () {
-        return listNetworks.call(this.options);
     }
     seedToMnemonic (seed) {
         return seedToMnemonic.call(this.options, seed);
@@ -72,12 +66,10 @@ export default class Elrn {
     recent () {
         return recent.call(this.options);
     }
-    /*
     shift (withdrawalAddress, pair, shapeshiftOptions) {
-        return shapeshift.shift.call(this.options, withdrawalAddress, pair, shapeshiftOptions);
+        return shift.call(this.options, withdrawalAddress, pair, shapeshiftOptions);
     }
     shapeShiftStatus (depositAddress) {
-        return shapeshift.status.call(this.options, depositAddress);
+        return shapeShiftStatus.call(this.options, depositAddress);
     }
-    */
 };
