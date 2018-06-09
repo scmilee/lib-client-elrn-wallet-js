@@ -18,8 +18,7 @@ suite('shapeshift', function() {
       const elrnClient = new Elrn(config)
       return elrnClient.coins()
       .then((data) => {
-          const bitcoinForever = data.BTC
-          assert.equal(bitcoinForever.name, 'Bitcoin')
+          assert.equal(Array.isArray(data), true);
       })
     });
     test('depositLimit', function() {

@@ -1,4 +1,3 @@
-import createKeypair from './src/createKeypair.js';
 import createSeed from './src/createSeed.js';
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
@@ -20,9 +19,6 @@ export default class Elrn {
     constructor(options) {
         let defaultOptions = {};
         this.options = Object.call(defaultOptions, options);
-    }
-    createKeypair (coinInfo) {
-        return createKeypair.call(this.options, coinInfo);
     }
     createSeed () {
         return createSeed.call(this.options);
