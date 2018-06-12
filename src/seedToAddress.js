@@ -1,13 +1,13 @@
 var bitcoin = require('bitcoinjs-lib')
 const isBuffer = require('is-buffer')
 
-export default function seedToAddress(seed, derivePathStr, network ) {
+export default function seedToAddress(seed, path, coin) {
     if (isBuffer(seed) != true) Promise.reject(new Error('must call seedToAddress with a buffer (see createSeed.js)'))
-    if (!derivePathStr) Promise.reject(new Error('must call seedToAddress with a derive path'))
+    if (!path) Promise.reject(new Error('must call seedToAddress with a derive path'))
     return new Promise((resolve, reject) => {
         try {
-            var root = bitcoin.HDNode.fromSeedBuffer(seed, bitcoin.networks[network]);
-            let child = root.derivePath(derivePathStr)
+            var root = bitcoin.HDNode.fromSeedBuffer(seed, bitcoin.networks[coin]);
+            let child = root.derivePath(path)
             var keyPair = child.keyPair;
             resolve(keyPair.getAddress().toString());
         } catch (err) {
