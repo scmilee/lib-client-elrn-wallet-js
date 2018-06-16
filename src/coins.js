@@ -1,5 +1,5 @@
 const shapeshift = require('shapeshift.io')
-const extensions = require('./networksExtensions') // bitcoinjs
+const extensions = require('./networksExtensions') // HD Wallet Support
 
 // augment shapeshift coins results with known values for ETH tokens and bitcoinjs
 export default () => {
@@ -50,6 +50,9 @@ export default () => {
                       return
                   }
                   if (coin == 'ZEC') {
+                      return
+                  }
+                  if (coin.id == 'blackcoin') {
                       return
                   }
                   extendedCoins[coin] = Object.assign(coins[coin]);
