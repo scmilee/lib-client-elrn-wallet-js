@@ -1,0 +1,5 @@
+type: library
+buildEngine: node-8.10.0
+buildStepAppends:
+  install:
+    - "find . -printf '%Tc %p\n' | grep 1970 | awk '{print $8}' | xargs -I \"{}\" touch \"{}\""
