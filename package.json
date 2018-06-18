@@ -1,6 +1,6 @@
 {
   "name": "lib-client-elrn-wallet",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "cryptocurrency utilities",
   "main": "index.js",
   "scripts": {
