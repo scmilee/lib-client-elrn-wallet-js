@@ -1,7 +1,6 @@
 const axios = require('axios');
 const ethplorerApiKey = 'freekey';
 const promiseRetry = require('promise-retry');
-import fetch from 'node-fetch';
 
 const getTokenContractInfo = function (contractAddress) {
     if(!contractAddress) {return Promise.reject(new Error('called getErc20TokenContractInfo without providing address'))}
