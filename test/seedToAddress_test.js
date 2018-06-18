@@ -5,6 +5,7 @@ const isBuffer = require('is-buffer')
 const assert = chai.assert;
 const bufferFrom = require('buffer-from');
 import Elrn from '..';
+const extensions = require('../src/networksExtensions')
 
 suite('seedToAddress', function() {
     // test('seedToAddress returns a string', function() {
@@ -40,7 +41,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/0'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'bitcoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.bitcoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, '164Cw1K93cYrme5s9VdCaPXLpTXE35RN9e')
@@ -52,7 +53,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/2'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'litecoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.litecoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'LQarSkd7ewx4qW1Mf7m56JtiQXufS2Trdd')
@@ -64,7 +65,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/3'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'dogecoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.dogecoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'D5MfWuxRhPpL6BoST1gHwkUL8sEqneitqo')
@@ -76,31 +77,31 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'bgold')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.bgold)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'GLbFEsH33fEn7iQFPNSVW52kPTAUbCieNu')
         })
     });
-    test('blackcoin', function() {
-        const config = require(__dirname + '/config/options.js');
-        const elrnClient = new Elrn(config)
-        //spring range position vocal foot tilt drastic diet tube song debris excite
-        let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
-        let derivePath = "m/44'/10'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'blackcoin')
-        .then((address) => {
-            assert.equal(typeof address,  'string')
-            assert.equal(address, 'BGducTAHrsowjjjmtgYaXr1St1hsK1PRXe')
-        })
-    });
+    // test('blackcoin', function() {
+    //     const config = require(__dirname + '/config/options.js');
+    //     const elrnClient = new Elrn(config)
+    //     //spring range position vocal foot tilt drastic diet tube song debris excite
+    //     let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
+    //     let derivePath = "m/44'/10'/0'/0/0"
+    //     return elrnClient.seedToAddress(seed, derivePath, extensions.blackcoin)
+    //     .then((address) => {
+    //         assert.equal(typeof address,  'string')
+    //         assert.equal(address, 'BGducTAHrsowjjjmtgYaXr1St1hsK1PRXe')
+    //     })
+    // });
     test('clam', function() {
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/23'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'clam')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.clam)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'xLqjAxG1wNHKtC9cMMbseHaFJKTNdXfKLS')
@@ -112,7 +113,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/5'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'dash')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.dash)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'XfmnvKyrj6vrBAJy2eZ8f45HPt3xTB6X29')
@@ -124,7 +125,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/20'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'digibyte')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.digibyte)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'DBWNN48Gez6rCsUBuEp4fsoYYbP5u98xV3')
@@ -136,7 +137,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/101'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'game')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.game)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'GQEwKc76g8yH5iG6V2sXamJg7xdWv3sksa')
@@ -148,7 +149,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/22'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'monacoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.monacoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'MFqAa7w8PVs4P13KZtFhwMo42k2fQVjDww')
@@ -160,7 +161,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/200'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'omnicore')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.omnicore)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, '1HKz8NAZ9DfE9mdTzA2fX1sLWVoPwnW5Y4')
@@ -172,7 +173,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/25'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'neoscoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.neoscoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'NhAiSRK6KS1yxqShU5aQ9vEUK3gxgCCL7c')
@@ -184,7 +185,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/7'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'namecoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.namecoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'N1ox4X8Yw1aU3XikB3W8tdTKCCuUA3QVAn')
@@ -196,7 +197,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/50'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'novacoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.novacoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, '4bsNwTfSnn13UbbWrg5dCv7dcUEBxYU4kv')
@@ -208,7 +209,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/81'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'potcoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.potcoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'PWoUwZ8qVazJzrXgWdznkqdLpQgsBqC4DX')
@@ -220,7 +221,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/6'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'peercoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.peercoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'PKhK5CQXSAu7DX5aZ1t4yAkMVa9uuTx7Qu')
@@ -232,7 +233,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/141'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'komodo')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.komodo)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'RJbGR69HvTwJtZFjTomK4gwEwZzAgpn39p')
@@ -244,7 +245,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/140'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'lbry')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.lbry)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'bR8wiWfVn8de8a7FyNhL4937VB5FLCFkBw')
@@ -256,7 +257,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/129'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'revolutionvr')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.revolutionvr)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'VVxWvKPyfQvmUxV1xc8wpgLtjAvsZuNtLH')
@@ -268,7 +269,7 @@ suite('seedToAddress', function() {
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let seed = bufferFrom('c88e288c7d4904aa7ac31e910cf2a0474dfc3f88b4fac7ab3a88dc5aaa8ffa0d0bd569e6a45e130048e4d0be5d2cf5d20d63496093f6560fd63eaf9a048832d9', 'hex')
         let derivePath = "m/44'/28'/0'/0/0"
-        return elrnClient.seedToAddress(seed, derivePath, 'vertcoin')
+        return elrnClient.seedToAddress(seed, derivePath, extensions.vertcoin)
         .then((address) => {
             assert.equal(typeof address,  'string')
             assert.equal(address, 'Vn859fLnRi6y5zU5PsTzwQuEfc9PnUSUWJ')
