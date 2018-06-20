@@ -1,4 +1,6 @@
-  it('can create a 1-to-1 Transaction', function () {
+/* This is dead but placeholder for a day or two*/
+
+it('can create a 1-to-1 Transaction', function () {
     var alice = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
     var txb = new bitcoin.TransactionBuilder()
 
