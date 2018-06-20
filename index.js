@@ -14,6 +14,8 @@ import marketInfo from './src/marketInfo.js'
 import recent from './src/recent.js'
 import shift from './src/shift.js'
 import shapeShiftStatus from './src/shapeShiftStatus.js'
+import seedToXpub from './src/seedToXpub.js'
+import xPubToUnspentOutputs from './src/xPubToUnspentOutputs.js'
 
 export default class Elrn {
     constructor(options) {
@@ -67,5 +69,11 @@ export default class Elrn {
     }
     shapeShiftStatus (depositAddress) {
         return shapeShiftStatus.call(this.options, depositAddress);
+    }
+    seedToXpub (seed, derivePath, network) {
+        return seedToXpub.call(this.options, seed, derivePath, network);
+    }
+    xPubToUnspentOutputs (xPubString, network) {
+        return xPubToUnspentOutputs.call(this.options, xPubString, network);
     }
 };
