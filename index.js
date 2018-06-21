@@ -15,7 +15,8 @@ import recent from './src/recent.js'
 import shift from './src/shift.js'
 import shapeShiftStatus from './src/shapeShiftStatus.js'
 import seedToXpub from './src/seedToXpub.js'
-import xPubToUnspentOutputs from './src/xPubToUnspentOutputs.js'
+import xPubToActivity from './src/xPubToActivity.js'
+import activityToUnspentOutputs from './src/activityToUnspentOutputs.js'
 
 export default class Elrn {
     constructor(options) {
@@ -73,7 +74,10 @@ export default class Elrn {
     seedToXpub (seed, derivePath, network) {
         return seedToXpub.call(this.options, seed, derivePath, network);
     }
-    xPubToUnspentOutputs (xPubString, network) {
-        return xPubToUnspentOutputs.call(this.options, xPubString, network);
+    xPubToActivity (xPubString, network) {
+        return xPubToActivity.call(this.options, xPubString, network);
+    }
+    activityToUnspentOutputs (activity, network) {
+        return activityToUnspentOutputs.call(this.options, activity, network);
     }
 };

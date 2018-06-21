@@ -6,15 +6,16 @@ const assert = chai.assert;
 const bufferFrom = require('buffer-from');
 import Elrn from '..';
 
-suite('xPubToUnspentOutputs', function() {
-    test('xPubToUnspentOutputs - bitcoin', function() {
+suite('activityToUnspentOutputs', function() {
+    test('activityToUnspentOutputs', function() {
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //spring range position vocal foot tilt drastic diet tube song debris excite
         let xPubString = 'xpub6CajDacdHWChWvVNMVDEmUQAmB68cGa5xibJspixagJBT88Mb2rFhrHX3qw4rVXb1XkZ6AhE3vM9TtowSzgBu5xCpquBYxYbvWof5N5fTWD'
-        return elrnClient.xPubToUnspentOutputs(xPubString, 'bitcoin')
+        return elrnClient.xPubToActivity(xPubString, 'bitcoin')
+        .then((activity) => elrnClient.activityToUnspentOutputs(activity))
         .then((unspentOutputs) => {
-            assert.equal(typeof unspentOutputs, 'object')
+          assert.equal(typeof unspentOutputs, 'object')
         })
     });
 });
