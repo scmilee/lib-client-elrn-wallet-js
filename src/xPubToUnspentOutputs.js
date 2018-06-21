@@ -11,7 +11,17 @@ export default (xPubString, network) => {
                     const url = `https://blockchain.info/multiaddr?active=${xPubString}`
                     return axios.get(url)
                     .then(function(response) {
-                        resolve(response.data);
+                      let unspentOutputs = {};
+                      response.data.txs.map((transaction) => {
+                        return transaction.out.map((output) => {
+                          if (output.spent === false) {
+                            let index = output.n;
+                            unspentOutputs[`${transaction.hash}`] = unspentOutputs[`${transaction.hash}`] || {}
+                            unspentOutputs[`${transaction.hash}`][`${output.n}`] = output;
+                          }
+                        })
+                      })
+                      resolve(unspentOutputs);
                     })
             default:
                 reject(new Error(`called xPubToUnspentOutputs with unknown network: ${network}`))
