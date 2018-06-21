@@ -17,6 +17,7 @@ import shapeShiftStatus from './src/shapeShiftStatus.js'
 import seedToXpub from './src/seedToXpub.js'
 import xPubToActivity from './src/xPubToActivity.js'
 import activityToUnspentOutputs from './src/activityToUnspentOutputs.js'
+import unspentOutputsToInputs from './src/unspentOutputsToInputs.js'
 
 export default class Elrn {
     constructor(options) {
@@ -79,5 +80,8 @@ export default class Elrn {
     }
     activityToUnspentOutputs (activity, network) {
         return activityToUnspentOutputs.call(this.options, activity, network);
+    }
+    unspentOutputsToInputs (unspentOutputs, sendAmount) {
+        return unspentOutputsToInputs.call(this.options, unspentOutputs, sendAmount);
     }
 };
