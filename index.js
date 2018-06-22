@@ -3,6 +3,7 @@ import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
 import seedToAddress from './src/seedToAddress.js'
 import seedToPublicKey from './src/seedToPublicKey.js'
+import seedToPrivateKey from './src/seedToPrivateKey.js'
 import publicKeyToSegwitAddress from './src/publicKeyToSegwitAddress.js'
 import seedPrivateKeyToEthereumAddress from './src/seedPrivateKeyToEthereumAddress.js'
 import exchangeRate from './src/exchangeRate.js'
@@ -14,6 +15,11 @@ import marketInfo from './src/marketInfo.js'
 import recent from './src/recent.js'
 import shift from './src/shift.js'
 import shapeShiftStatus from './src/shapeShiftStatus.js'
+import seedToXpub from './src/seedToXpub.js'
+import xPubToActivity from './src/xPubToActivity.js'
+import activityToUnspentOutputs from './src/activityToUnspentOutputs.js'
+import unspentOutputsToInputs from './src/unspentOutputsToInputs.js'
+import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js'
 
 export default class Elrn {
     constructor(options) {
@@ -34,6 +40,9 @@ export default class Elrn {
     }
     seedToPublicKey (seed, derivePath, network) {
         return seedToPublicKey.call(this.options, seed, derivePath, network);
+    }
+    seedToPrivateKey (seed, derivePath, network) {
+        return seedToPrivateKey.call(this.options, seed, derivePath, network);
     }
     publicKeyToSegwitAddress (publicKey, derivePath, network) {
         return publicKeyToSegwitAddress.call(this.options, publicKey, derivePath, network);
@@ -67,5 +76,20 @@ export default class Elrn {
     }
     shapeShiftStatus (depositAddress) {
         return shapeShiftStatus.call(this.options, depositAddress);
+    }
+    seedToXpub (seed, derivePath, network) {
+        return seedToXpub.call(this.options, seed, derivePath, network);
+    }
+    xPubToActivity (xPubString, network) {
+        return xPubToActivity.call(this.options, xPubString, network);
+    }
+    activityToUnspentOutputs (activity, network) {
+        return activityToUnspentOutputs.call(this.options, activity, network);
+    }
+    unspentOutputsToInputs (unspentOutputs, sendAmount) {
+        return unspentOutputsToInputs.call(this.options, unspentOutputs, sendAmount);
+    }
+    inputsToUnsignedTransaction (inputs, receiveAddress, changeAddress, sendAmount, feeAmount) {
+        return inputsToUnsignedTransaction.call(this.options, inputs, receiveAddress, changeAddress, sendAmount, feeAmount);
     }
 };
