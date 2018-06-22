@@ -81,4 +81,33 @@ suite('unspentOutputsToInputs', function() {
         })
         .catch((error) => assert.equal(error.message, "not enough funds to cover sendAmount"))
     });
+    
+    test('signeable outputs', function() {
+      const unspentOutputsSignable = { '5bb5e8c28622d707b683ec39f02fa6f723abde103aff6680fa7cfb3d8ab24871':
+         { '0':
+            { value: 100000,
+              tx_index: 355831067,
+              n: 0,
+              spent: false,
+              script: '76a914d9f055f5d7406177cc48047bef118e323127b86c88ac',
+              type: 0,
+              addr: '1LsMYT7CRunQ4njP1UjUDAeHQEqGxNVrUK',
+              xpub: [Object] } } 
+            }
+        const config = require(__dirname + '/config/options.js');
+        const elrnClient = new Elrn(config)
+        const sendAmount = 210
+        return elrnClient.unspentOutputsToInputs(unspentOutputsSignable, sendAmount)
+        .then((inputs) => {
+            let cumulativeValue = 0;
+            assert.equal(typeof inputs, 'object')
+            Object.keys(inputs).map((unspentOutputTransaction) => {
+              Object.keys(unspentOutputsSignable[unspentOutputTransaction]).map((unspentOutput) => {
+                cumulativeValue = cumulativeValue + unspentOutputsSignable[unspentOutputTransaction][unspentOutput].value
+              })
+            })
+            assert.isAtLeast(cumulativeValue, sendAmount)
+        })
+        .catch((error) => assert.equal(error.message, "not enough funds to cover sendAmount"))
+    });
 });

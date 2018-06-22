@@ -10,10 +10,10 @@ suite('xPubToActivity', function() {
     test('xPubToActivity - bitcoin', function() {
         const config = require(__dirname + '/../config/options.js');
         const elrnClient = new Elrn(config)
-        //spring range position vocal foot tilt drastic diet tube song debris excite
-        let xPubString = 'xpub6CajDacdHWChWvVNMVDEmUQAmB68cGa5xibJspixagJBT88Mb2rFhrHX3qw4rVXb1XkZ6AhE3vM9TtowSzgBu5xCpquBYxYbvWof5N5fTWD'
+        let xPubString = 'xpub6CDy2jtLYBVonu96ARo283eBmgEf3YJhg7kRNEAQ7oz7evLgCEfzGzTiieb8KjgwWzD7R49b5noTnTmKMQK8cZ9zPojTGtLtyNRcxDRQWWc'
         return elrnClient.xPubToActivity(xPubString, 'bitcoin')
         .then((activity) => {
+            console.log(JSON.stringify(activity))
             assert.equal(typeof activity, 'object')
         })
     });
