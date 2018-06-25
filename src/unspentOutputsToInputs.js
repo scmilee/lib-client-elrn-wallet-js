@@ -1,4 +1,4 @@
-export default (unspentOutputs, sendAmount) => {
+export default (unspentOutputs, sendAmount, underfundAllowed) => {
   return new Promise((resolve, reject) => {
     try {
       let cumulativeValue = 0;
@@ -13,7 +13,11 @@ export default (unspentOutputs, sendAmount) => {
           }
         })
       })
-      reject(new Error('not enough funds to cover sendAmount'))
+      if (underfundAllowed === false) {
+        alert(cumulativeValue)
+        reject(new Error('not enough funds to cover sendAmount'))
+      }
+      resolve(inputs)
     } catch (err) {
         reject(err);
     }

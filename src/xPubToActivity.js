@@ -9,7 +9,7 @@ const slow_xPubToActivity = function(xPubString, network) {
       try {
           switch (network) {
               case 'bitcoin':
-                  const url = `https://blockchain.info/multiaddr?active=${xPubString}`
+                  const url = `https://blockchain.info/multiaddr?cors=true&active=${xPubString}`
                   return axios.get(url)
                   .then(function(response) {
                     resolve(response.data);
