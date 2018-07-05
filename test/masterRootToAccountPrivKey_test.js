@@ -1,0 +1,26 @@
+/*eslint-env node, mocha, es6 */
+process.env.NODE_ENV = 'test';
+const chai = require('chai');
+const bufferFrom = require('buffer-from');
+const extensions = require('../src/networksExtensions');
+const assert = chai.assert;
+import Elrn from '..';
+
+const config = require(__dirname + '/config/options.js');
+const elrnClient = new Elrn(config);
+
+suite('masterRootToAccountPrivKey', function() {
+    test('returns a xpriv key to a account', function() {
+        
+        const derivedPathStr = "m/44'/0'/0'/0/0";
+        //mnemonic--> salad ability key forget baby visit dress whip spray arrange fun orphan tip spin mansion
+        let seed = bufferFrom('0aa3860185456253d2bbdb7fb5675d039e9873f5b249ba778f0b79148738320c4b0a6b4cdca8067bc8c1e70aa0953d87fbd9e49686777fb7fa348f2af4a06e88', 'hex');
+        const rootNode = elrnClient.seedToNode(seed , extensions.bitcoin);
+        const accountNumber = 3;
+      
+        return elrnClient.masterRootToAccountPrivKey(rootNode, derivedPathStr , accountNumber)
+        .then((address) => {
+          assert.equal(address, 'xprv9xzQzPVSHf3pCsetFfoP3v3PyLZPHLqV9JBKLgasEQtCDpdZrSXGDVA1SVcL9H1QSePgRTiDD6D6debCoZfoThJ8oCfBK6DQMMBXpA8DYPM');
+        })
+    });
+});
