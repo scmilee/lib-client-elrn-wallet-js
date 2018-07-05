@@ -15,7 +15,7 @@ suite('masterRootToAccountPubKey', function() {
         const derivedPathStr = "m/44'/0'/0'/0/0";
         //mnemonic--> salad ability key forget baby visit dress whip spray arrange fun orphan tip spin mansion
         let seed = bufferFrom('0aa3860185456253d2bbdb7fb5675d039e9873f5b249ba778f0b79148738320c4b0a6b4cdca8067bc8c1e70aa0953d87fbd9e49686777fb7fa348f2af4a06e88', 'hex');
-        const rootNode = elrnClient.seedToNode(seed , extensions.bitcoin);
+        const rootNode = elrnClient.seedToRoot(seed , extensions.bitcoin);
         const accountNumber = 3;
       
         return elrnClient.masterRootToAccountPubKey(rootNode, derivedPathStr , accountNumber)
