@@ -4,14 +4,9 @@ const isBuffer = require('is-buffer')
 
 export default (seed, coinExt) => {
     try {
-        if (coinExt.type == 'bitcoinjs') {
-            const rootNode = bitcoin.HDNode.fromSeedBuffer(seed, coinExt);
-            return rootNode; 
-        }
-        if (coinExt.type == 'erc20') {
-            const hdRoot = hdkey.fromMasterSeed(seed);
-            return hdroot;
-        }
+        const rootNode = bitcoin.HDNode.fromSeedBuffer(seed);
+        return rootNode; 
+      
       } catch (err) {
         console.log(err);
      }

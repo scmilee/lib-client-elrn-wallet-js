@@ -41,8 +41,8 @@ export default class Elrn {
     seedToAddress (seed, derivePath, network) {
         return seedToAddress.call(this.options, seed, derivePath, network);
     }
-    seedToRoot(seed, coinExt){
-        return seedToRoot.call(this.options, seed ,coinExt);
+    seedToRoot(seed){
+        return seedToRoot.call(this.options, seed );
     }
     seedToPublicKey (seed, derivePath, network) {
         return seedToPublicKey.call(this.options, seed, derivePath, network);
