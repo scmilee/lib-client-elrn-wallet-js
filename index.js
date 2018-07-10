@@ -24,6 +24,7 @@ import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js'
 import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js'
 import seedToRoot from './src/seedToRoot.js'
 import xPrivToCoinAddress from './src/xPrivToCoinAddress.js'
+import checkAddressBalances from './src/checkAddressBalances.js'
 
 export default class Elrn {
     constructor(options) {
@@ -58,7 +59,10 @@ export default class Elrn {
         return seedPrivateKeyToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
     }
     exchangeRate (pair) {
-        return exchangeRate.call(this.options, pair)
+        return exchangeRate.call(this.options, pair);
+    }
+    checkAddressBalances(address, network){
+        return checkAddressBalances.call(this.options, address, network);
     }
     coins () {
         return coins.call(this.options);
@@ -108,4 +112,5 @@ export default class Elrn {
     xPrivToCoinAddress(derivePath, xPrivKey, addressNumber){
         return xPrivToCoinAddress.call(this.options, derivePath, xPrivKey, addressNumber);
     }
+
 };
