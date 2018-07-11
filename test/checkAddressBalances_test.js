@@ -14,7 +14,11 @@ suite('checkAddressBalances', function() {
         let network = 'bitcoin'
         return elrnClient.checkAddressBalances(address, network)
         .then((amount) => {
-            assert.equal(amount, 100000);
+            let total = 0
+            for (var i = address.length - 1; i >= 0; i--) {
+                total += amount[address[i]].final_balance
+            }
+            assert.equal(total, 100000);
         });
     });
 });

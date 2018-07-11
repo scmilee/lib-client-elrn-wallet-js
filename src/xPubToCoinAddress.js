@@ -1,8 +1,8 @@
 const bitcoin = require('bitcoinjs-lib')
 
-export default ( xPrivKey, addressNumber) => {
+export default ( xPubKey, addressNumber) => {
     try {
-        const derivedNode = bitcoin.HDNode.fromBase58(xPrivKey)
+        const derivedNode = bitcoin.HDNode.fromBase58(xPubKey)
       	const address = derivedNode.derive(0)
       		.derive(addressNumber);
 

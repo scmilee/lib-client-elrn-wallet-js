@@ -13,14 +13,11 @@ export default function checkAddressBalances (addresses, network) {
                   }
                   //remove the last | to fit the api
                   url = url.slice(0,-1);
-                  
+
                   return axios.get(url)
                   .then(function(response) {
-                    let addressesTotal = 0;
-                    for (var i = addresses.length - 1; i >= 0; i--) {
-                       addressesTotal += response.data[addresses[i]].final_balance
-                    }
-                    resolve(addressesTotal);
+                    
+                    resolve(response.data);
                   })
           default:
               reject(new Error(`called checkAddressBalance with unknown network: ${network}`))

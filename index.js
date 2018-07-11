@@ -23,7 +23,7 @@ import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js'
 import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js'
 import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js'
 import seedToRoot from './src/seedToRoot.js'
-import xPrivToCoinAddress from './src/xPrivToCoinAddress.js'
+import xPubToCoinAddress from './src/xPubToCoinAddress.js'
 import checkAddressBalances from './src/checkAddressBalances.js'
 
 export default class Elrn {
@@ -109,8 +109,8 @@ export default class Elrn {
     masterRootToAccountPubKey(rootNode, derivePath, accountNumber){
         return masterRootToAccountPubKey.call(this.options, rootNode, derivePath, accountNumber);
     }
-    xPrivToCoinAddress(derivePath, xPrivKey, addressNumber){
-        return xPrivToCoinAddress.call(this.options, derivePath, xPrivKey, addressNumber);
+    xPubToCoinAddress(derivePath, xPubKey, addressNumber){
+        return xPubToCoinAddress.call(this.options, derivePath, xPubKey, addressNumber);
     }
 
 };
