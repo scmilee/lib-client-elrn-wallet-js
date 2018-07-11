@@ -20,10 +20,12 @@ import xPubToActivity from './src/xPubToActivity.js'
 import activityToUnspentOutputs from './src/activityToUnspentOutputs.js'
 import unspentOutputsToInputs from './src/unspentOutputsToInputs.js'
 import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js'
+import inputsToPaths from './src/inputsToPaths.js'
 import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js'
 import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js'
 import seedToRoot from './src/seedToRoot.js'
 import xPubToCoinAddress from './src/xPubToCoinAddress.js'
+import xPrivToCoinPrivKey from './src/xPrivToCoinPrivKey.js'
 import checkAddressBalances from './src/checkAddressBalances.js'
 
 export default class Elrn {
@@ -103,6 +105,9 @@ export default class Elrn {
     inputsToUnsignedTransaction (inputs, receiveAddress, changeAddress, sendAmount, feeAmount) {
         return inputsToUnsignedTransaction.call(this.options, inputs, receiveAddress, changeAddress, sendAmount, feeAmount);
     }
+    inputsToPaths(inputs, xPubKey){
+        return inputsToPaths.call(this.options, inputs, xPubKey);
+    }
     masterRootToAccountPrivKey(rootNode, derivePath, accountNumber){
         return masterRootToAccountPrivKey.call(this.options, rootNode, derivePath, accountNumber);
     }
@@ -111,6 +116,9 @@ export default class Elrn {
     }
     xPubToCoinAddress(derivePath, xPubKey, addressNumber){
         return xPubToCoinAddress.call(this.options, derivePath, xPubKey, addressNumber);
+    }
+    xPrivToCoinPrivKey(xPrivKey, addressNumbers){
+        return xPrivToCoinPrivKey.call(this.options, xPrivKey, addressNumbers);
     }
 
 };
