@@ -25,7 +25,7 @@ import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js'
 import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js'
 import seedToRoot from './src/seedToRoot.js'
 import xPubToCoinAddress from './src/xPubToCoinAddress.js'
-import xPrivToCoinPrivKey from './src/xPrivToCoinPrivKey.js'
+import xPrivToKeyPair from './src/xPrivToKeyPair.js'
 import checkAddressBalances from './src/checkAddressBalances.js'
 
 export default class Elrn {
@@ -117,8 +117,8 @@ export default class Elrn {
     xPubToCoinAddress(derivePath, xPubKey, addressNumber){
         return xPubToCoinAddress.call(this.options, derivePath, xPubKey, addressNumber);
     }
-    xPrivToCoinPrivKey(xPrivKey, addressNumbers){
-        return xPrivToCoinPrivKey.call(this.options, xPrivKey, addressNumbers);
+    xPrivToKeyPair(xPrivKey, addressNumbers){
+        return xPrivToKeyPair.call(this.options, xPrivKey, addressNumbers);
     }
 
 };
