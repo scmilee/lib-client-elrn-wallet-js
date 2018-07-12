@@ -1,4 +1,5 @@
-import createSeed from './src/createSeed.js';
+import createSeed from './src/createSeed.js'
+import createOneToOneTX from './src/createOneToOneTX.js'
 import seedToMnemonic from './src/seedToMnemonic.js'
 import mnemonicToSeed from './src/mnemonicToSeed.js'
 import seedToAddress from './src/seedToAddress.js'
@@ -70,6 +71,9 @@ export default class Elrn {
     }
     coins () {
         return coins.call(this.options);
+    }
+    createOneToOneTX(destinationAddress, sendAmount , accountNumber, xPriv ){
+        return createOneToOneTX.call(this.options, destinationAddress, sendAmount , accountNumber, xPriv )
     }
     depositLimit (pair) {
         return depositLimit.call(this.options, pair);
