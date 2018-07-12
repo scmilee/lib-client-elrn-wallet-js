@@ -18,9 +18,12 @@ suite('masterRootToAccountPubKey', function() {
         const rootNode = elrnClient.seedToRoot(seed);
         const accountNumber = 3;
       
-        return elrnClient.masterRootToAccountPubKey(rootNode, derivedPathStr , accountNumber)
-        .then((address) => {
-          assert.equal(address, 'xpub6BymPu2L82c7RMjMMhLPR3z8XNPsgoZLWX6v94zUnkRB6cxiPyqWmHUVHoVJKp3Zv3V3XcZ6t7gATaARueGb1LgRcVczwYoX4ftbyPqDU86');
-        })
+        elrnClient.seedToRoot(seed)
+            .then((rootNode) => {
+                return elrnClient.masterRootToAccountPubKey(rootNode, derivedPathStr , accountNumber)
+                .then((address) => {
+                        assert.equal(address, 'xpub6BymPu2L82c7RMjMMhLPR3z8XNPsgoZLWX6v94zUnkRB6cxiPyqWmHUVHoVJKp3Zv3V3XcZ6t7gATaARueGb1LgRcVczwYoX4ftbyPqDU86');
+                })
+            })
     });
 });
