@@ -18,12 +18,14 @@ import shapeShiftStatus from './src/shapeShiftStatus.js'
 import seedToXpub from './src/seedToXpub.js'
 import xPubToActivity from './src/xPubToActivity.js'
 import activityToUnspentOutputs from './src/activityToUnspentOutputs.js'
+import activityToChangeAddress from './src/activityToChangeAddress.js'
 import unspentOutputsToInputs from './src/unspentOutputsToInputs.js'
 import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js'
 import inputsToPaths from './src/inputsToPaths.js'
 import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js'
 import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js'
 import seedToRoot from './src/seedToRoot.js'
+import signTransaction from './src/signTransaction.js'
 import xPubToCoinAddress from './src/xPubToCoinAddress.js'
 import xPrivToKeyPair from './src/xPrivToKeyPair.js'
 import checkAddressBalances from './src/checkAddressBalances.js'
@@ -93,11 +95,17 @@ export default class Elrn {
     seedToXpub (seed, derivePath, network) {
         return seedToXpub.call(this.options, seed, derivePath, network);
     }
+    signTransaction(transaction, keyPairs){
+        return signTransaction.call(this.options, transaction, keyPairs);
+    }
     xPubToActivity (xPubString, network) {
         return xPubToActivity.call(this.options, xPubString, network);
     }
-    activityToUnspentOutputs (activity, network) {
-        return activityToUnspentOutputs.call(this.options, activity, network);
+    activityToUnspentOutputs (activity) {
+        return activityToUnspentOutputs.call(this.options, activity);
+    }
+    activityToChangeAddress(activity, xPubKey, elrnClient){
+        return activityToChangeAddress.call(this.options, activity, xPubKey, elrnClient);
     }
     unspentOutputsToInputs (unspentOutputs, sendAmount) {
         return unspentOutputsToInputs.call(this.options, unspentOutputs, sendAmount);
