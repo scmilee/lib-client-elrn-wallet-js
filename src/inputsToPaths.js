@@ -13,7 +13,8 @@ export default (inputs, accountPubKey) => {
             newPath = inputs[inputTransaction][inputn].xpub.path 
             let splitPath = newPath.split('/');
             let coinAddressIndex = splitPath.slice(-1)[0]
-            cumulativePaths.push(coinAddressIndex);
+            let coinIndexInt = parseInt(coinAddressIndex)
+            cumulativePaths.push(coinIndexInt);
           }
         })
       })

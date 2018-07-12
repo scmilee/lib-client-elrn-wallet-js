@@ -44,8 +44,8 @@ suite('inputsToPaths', function() {
         const pubKey = 'xpub6CDy2jtLYBVonu96ARo283eBmgEf3YJhg7kRNEAQ7oz7evLgCEfzGzTiieb8KjgwWzD7R49b5noTnTmKMQK8cZ9zPojTGtLtyNRcxDRQWWc'
         return elrnClient.inputsToPaths(inputs, pubKey)
         .then((paths) => {
-          assert.equal(paths[0], '6')
-          assert.equal(paths[1], '5')
+          assert.equal(paths[0], 6)
+          assert.equal(paths[1], 5)
        })
     });
 });
