@@ -2,7 +2,7 @@ const axios = require('axios');
 const promiseRetry = require('promise-retry');
 
 export default (activity) => {
-    if(!activity) {return Promise.reject(new Error('called actiityToUnspentOutputs without activity'))}
+    if(!activity) {return Promise.reject(new Error('called activityToUnspentOutputs without activity'))}
     return new Promise((resolve, reject) => {
         try {
           let unspentOutputs = {};

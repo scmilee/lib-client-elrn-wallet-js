@@ -45,6 +45,6 @@ suite('mnemonicTo Signed and Built transaction', function() {
                     })       
                 })
             })
-        })
+        }).catch(err => {throw new Error('operation failed')})
     });
 });

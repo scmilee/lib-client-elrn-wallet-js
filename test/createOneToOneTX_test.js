@@ -18,6 +18,7 @@ suite('createOneToOneTX', function() {
         return elrnClient.createOneToOneTX(destinationAddress, sendAmount , accountNumber, xKeyPair)
         .then((transactionHex) => {
         	assert.equal(transactionHex.length, 746)
-        });
+        })
+        .catch(err => {throw new Error(err)});
     });
 });    

@@ -3,6 +3,7 @@ const bitcoin = require('bitcoinjs-lib')
 export default (transaction, keypairs) => {
     return new Promise((resolve, reject) => {
        try {
+        if (!Array.isArray(keypairs))  Promise.reject(new Error('Must call sign transaction with an array of keypairs'))
        		for (var i = 0; i < keypairs.length; i++) {
        			transaction.sign( i , keypairs[i]);
        		}
