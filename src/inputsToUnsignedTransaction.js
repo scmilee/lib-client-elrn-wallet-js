@@ -1,8 +1,9 @@
 var bitcoin = require('bitcoinjs-lib');
 
-export default (inputs, receiveAddress, changeAddress, sendAmount, feeAmount) => {
+export default (inputs, receiveAddress, changeAddress, sendAmt, feeAmount) => {
   return new Promise((resolve, reject) => {
     try {
+      const sendAmount = parseInt(sendAmt)
       var txb = new bitcoin.TransactionBuilder()
       txb.setVersion(1)
       let cumulativeOutputAmount = 0;
