@@ -3,7 +3,6 @@ const bitcoin = require('bitcoinjs-lib')
 export default (transaction, keypairs) => {
     return new Promise((resolve, reject) => {
        try {
-       	
        		for (var i = 0; i < keypairs.length; i++) {
        			transaction.sign( i , keypairs[i]);
        		}
