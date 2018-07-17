@@ -1,4 +1,4 @@
-const shapeshift = require('shapeshift.io')
+const shapeshift = require('shapeshift.io');
 
 export default () => {
     return new Promise((resolve, reject) => {
@@ -6,7 +6,7 @@ export default () => {
             if (err) {
                 reject(err);
             }
-            resolve(data)
-        })
+            resolve(data);
+        });
     });
-}
+};

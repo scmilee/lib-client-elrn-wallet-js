@@ -1,12 +1,10 @@
-var bitcoin = require('bitcoinjs-lib')
-var hdkey = require('ethereumjs-wallet/hdkey')
-const isBuffer = require('is-buffer')
+const bitcoin = require('bitcoinjs-lib');
 
-export default (seed) => {
+export default seed => {
     return new Promise((resolve, reject) => {
         try {
             const rootNode = bitcoin.HDNode.fromSeedBuffer(seed);
-        	resolve(rootNode); 
+            resolve(rootNode); 
         } catch (err) {
             reject(err);
         }

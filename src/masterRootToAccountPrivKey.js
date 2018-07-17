@@ -1,13 +1,11 @@
-var bitcoin = require('bitcoinjs-lib')
 
-export default function masterRootToAccountPivKey( rootNode, path , accountNumber ) {
+export default function masterRootToAccountPivKey(rootNode, path, accountNumber) {
     return new Promise((resolve, reject) => {
         try {
-            
-            let splitPath = path.split('/');
-            splitPath[3] = accountNumber + '\'';
-            const derivedPath = splitPath.splice(0,4).join('/');
-            let child = rootNode.derivePath(derivedPath)
+            const splitPath = path.split('/');
+            splitPath[3] = `${accountNumber}'`;
+            const derivedPath = splitPath.splice(0, 4).join('/');
+            const child = rootNode.derivePath(derivedPath);
            
             resolve(child.toBase58());
         } catch (err) {

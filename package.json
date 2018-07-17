@@ -6,7 +6,9 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js",
     "integration-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/*_test.js",
-    "shapeshift-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/shapeshift_test.js"
+    "shapeshift-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/shapeshift_test.js",
+    "eslint": "node_modules/.bin/eslint *.js src",
+    "eslint --fix": "node_modules/.bin/eslint *.js src --fix"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,12 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-cbtnuggets": "^7.0.5",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "is-buffer": "^2.0.2",
     "mocha": "^5.1.1"
   },
