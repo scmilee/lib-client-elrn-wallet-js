@@ -12,7 +12,7 @@ suite('activityToUnspentOutputs', function() {
        	const xpubKey = 'xpub6CDy2jtLYBVonu96ARo283eBmgEf3YJhg7kRNEAQ7oz7evLgCEfzGzTiieb8KjgwWzD7R49b5noTnTmKMQK8cZ9zPojTGtLtyNRcxDRQWWc'
        return elrnClient.activityToChangeAddress(activity, xpubKey , elrnClient)
         .then((changeAddress) => {
-          assert.equal(changeAddress, '13kfmzSB5a1uAxiXdXJnG5B6Yoik7sJAts')
+          assert.equal(changeAddress, '1CYHb8xfKkqcjyNrWaT2WTjkEC2FWn7dNc')
         })
     });
 });

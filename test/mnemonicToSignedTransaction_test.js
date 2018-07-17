@@ -1,3 +1,4 @@
+
 /*eslint-env node, mocha, es6 */
 process.env.NODE_ENV = 'test';
 const chai = require('chai');
@@ -33,18 +34,18 @@ suite('mnemonicTo Signed and Built transaction', function() {
                                                 .then((unsignedTransaction) => {
                                                     return elrnClient.signTransaction(unsignedTransaction, keyPairs)
                                                     .then((signedTransaction) => {
-                                                        assert.equal(signedTransaction.build().toHex().length , 748 )
-                                                    })
-                                                })
-                                            })
-                                        })  
-                                    }) 
-                                }) 
-                            })
-                        })
-                    })       
-                })
-            })
-        }).catch(err => {throw new Error('operation failed')})
+                                                        assert.equal(signedTransaction.build().toHex().length , 744 )
+                                                    }).catch(err => console.log(err))
+                                                }).catch(err => console.log(err))
+                                            }).catch(err => console.log(err))
+                                        })  .catch(err => console.log(err))
+                                    }).catch(err => console.log(err)) 
+                                }) .catch(err => console.log(err))
+                            }).catch(err => console.log(err))
+                        }).catch(err => console.log(err))
+                    }).catch(err => console.log(err))       
+                }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
+        }).catch(err => console.log(err))
     });
 });
