@@ -1,6 +1,6 @@
 var bitcoin = require('bitcoinjs-lib')
 
-export default function masterRootToAccountPivKey( rootNode, path , accountNumber ) {
+export default function masterRootToAccountPrivKey( rootNode, path , accountNumber ) {
     return new Promise((resolve, reject) => {
         try {
             
