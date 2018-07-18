@@ -3,12 +3,13 @@
 process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const assert = chai.assert;
-import Elrn from '..';
+import Elrn from '../..';
 
 suite('mnemonicTo Signed and Built transaction', function() {
     test('can sign and build a transaction from a mnemonic', function() {
-        const config = require(__dirname + '/config/options.js');
+        const config = require(__dirname + '/../config/options.js');
         const elrnClient = new Elrn(config)
+        this.timeout(5000);
         const mnemonic = 'strategy worth garlic gallery gesture happy trash boil ceiling weasel happy patrol'
         return elrnClient.mnemonicToSeed(mnemonic)
         .then((seed) => {
