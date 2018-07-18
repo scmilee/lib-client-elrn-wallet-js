@@ -1,8 +1,7 @@
-var bip39 = require('bip39')
-const isBuffer = require('is-buffer')
+const bip39 = require('bip39');
 export default function mnemonicToString(mnemonic) {
-    if (typeof mnemonic != 'string') {
-        return Promise.reject(new Error('must call mnemonicToSeed with a string'))
+    if (typeof mnemonic !== 'string') {
+        return Promise.reject(new Error('must call mnemonicToSeed with a string'));
     }
     return new Promise((resolve, reject) => {
         try {

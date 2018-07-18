@@ -1,6 +1,6 @@
-const crypto = require('crypto')
+const crypto = require('crypto');
 
-export default function createSeed(size=16) {
+export default function createSeed(size = 16) {
     return new Promise((resolve, reject) => {
         try {
             resolve(crypto.randomBytes(size));

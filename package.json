@@ -1,12 +1,14 @@
 {
   "name": "lib-client-elrn-wallet",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "cryptocurrency utilities",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/*_test.js",
     "integration-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/*_test.js",
-    "shapeshift-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/shapeshift_test.js"
+    "shapeshift-only-test": "./node_modules/mocha/bin/mocha --ui=tdd --inline-diffs --colors --require babel-core/register --require babel-polyfill ./test/integration/shapeshift_test.js",
+    "eslint": "node_modules/.bin/eslint *.js src",
+    "eslint --fix": "node_modules/.bin/eslint *.js src --fix"
   },
   "repository": {
     "type": "git",
