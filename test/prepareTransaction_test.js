@@ -16,8 +16,8 @@ suite('prepareTransaction', function() {
         const destinationAddress = '1FQcZ9AfYAGasWVHXYP7Nd4n2pDSdiwkWy';
         const accountNumber = 0;
         return elrnClient.prepareTransaction(destinationAddress, sendAmount , accountNumber, xKeyPair)
-        .then((transaction) => {
-        	assert.equal(typeof transaction, object )
+        .then((preparedTransaction) => {
+        	assert.equal(typeof preparedTransaction, 'object' )
         })
         .catch(err => {throw new Error(err)});
     });

@@ -23,8 +23,8 @@ import activityToChangeAddress from './src/activityToChangeAddress.js';
 import unspentOutputsToInputs from './src/unspentOutputsToInputs.js';
 import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js';
 import inputsToPaths from './src/inputsToPaths.js';
-import masterRootToAccountPrivKey from './src/masterRootToAccountPrivKey.js';
-import masterRootToAccountPubKey from './src/masterRootToAccountPubKey.js';
+import bip44RootToAccountPrivKey from './src/bip44RootToAccountPrivKey.js';
+import bip44RootToAccountPubKey from './src/bip44RootToAccountPubKey.js';
 import seedToRoot from './src/seedToRoot.js';
 import signTransaction from './src/signTransaction.js';
 import xPubToCoinAddress from './src/xPubToCoinAddress.js';
@@ -120,11 +120,11 @@ export default class Elrn {
     inputsToPaths(inputs, xPubKey) {
         return inputsToPaths.call(this.options, inputs, xPubKey);
     }
-    masterRootToAccountPrivKey(rootNode, derivePath, accountNumber) {
-        return masterRootToAccountPrivKey.call(this.options, rootNode, derivePath, accountNumber);
+    bip44RootToAccountPrivKey(rootNode, derivePath, accountNumber) {
+        return bip44RootToAccountPrivKey.call(this.options, rootNode, derivePath, accountNumber);
     }
-    masterRootToAccountPubKey(rootNode, derivePath, accountNumber) {
-        return masterRootToAccountPubKey.call(this.options, rootNode, derivePath, accountNumber);
+    bip44RootToAccountPubKey(rootNode, derivePath, accountNumber) {
+        return bip44RootToAccountPubKey.call(this.options, rootNode, derivePath, accountNumber);
     }
     xPubToCoinAddress(derivePath, xPubKey, addressNumber) {
         return xPubToCoinAddress.call(this.options, derivePath, xPubKey, addressNumber);
