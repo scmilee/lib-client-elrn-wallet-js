@@ -7,7 +7,7 @@ const bufferFrom = require('buffer-from');
 import Elrn from '..';
 
 suite('seedToPrivateKey', function() {
-    test('seedToPrivateKey', function() {
+    test('produces a bitcoin privateKey', function() {
         const config = require(__dirname + '/config/options.js');
         const elrnClient = new Elrn(config)
         //strategy worth garlic gallery gesture happy trash boil ceiling weasel happy patrol
