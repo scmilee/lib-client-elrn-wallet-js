@@ -20,6 +20,7 @@ import seedToXpub from './src/seedToXpub.js';
 import xPubToActivity from './src/xPubToActivity.js';
 import activityToUnspentOutputs from './src/activityToUnspentOutputs.js';
 import activityToChangeAddress from './src/activityToChangeAddress.js';
+import activityToEthereumTx from './src/activityToEthereumTx.js';
 import unspentOutputsToInputs from './src/unspentOutputsToInputs.js';
 import inputsToUnsignedTransaction from './src/inputsToUnsignedTransaction.js';
 import inputsToPaths from './src/inputsToPaths.js';
@@ -110,6 +111,9 @@ export default class Elrn {
     }
     activityToChangeAddress(activity, xPubKey, elrnClient) {
         return activityToChangeAddress.call(this.options, activity, xPubKey, elrnClient);
+    }
+    activityToEthereumTx(activity, destination, sendAmount, data){
+        return activityToEthereumTx.call(this.options, activity, destination , sendAmount, data) ;
     }
     unspentOutputsToInputs(unspentOutputs, sendAmount) {
         return unspentOutputsToInputs.call(this.options, unspentOutputs, sendAmount);
