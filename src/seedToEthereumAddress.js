@@ -8,21 +8,20 @@ const hdkey = require('ethereumjs-wallet/hdkey');
 
 export default function seedPrivateKeyToEthereumAddress(key, path) {
   if (typeof key !== 'string') {
-      return Promise.reject(new Error('must call seedPrivateKeyToEthereumAddress with a key'));
+      return Promise.reject(new Error('must call seedToEthereumAddress with a key'));
   }
   if (typeof path !== 'string') {
-      return Promise.reject(new Error('must call seedPrivateKeyToEthereumAddress with a path'));
+      return Promise.reject(new Error('must call seedToEthereumAddress with a path'));
   }
   return new Promise((resolve, reject) => {
       try {
           const splitPath = path.split('/');
-          const derivedPath = splitPath.splice(0, 5).join('/');
+          const derivedPath = splitPath.splice(0, splitPath.length).join('/');
           const index = splitPath.join();
           const hdWallet = hdkey.fromExtendedKey(key);
           const derivedNode = hdWallet.derivePath(derivedPath);
-          const nodeChild = derivedNode.deriveChild(index);
-          const childWallet = nodeChild.getWallet();
-          const walletAddress = childWallet.getAddressString();
+          const childWallet = derivedNode.getWallet();
+          const walletAddress = childWallet.getChecksumAddressString();
           resolve(walletAddress);
       } catch (err) {
           reject(err);

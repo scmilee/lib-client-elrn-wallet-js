@@ -6,7 +6,7 @@ import seedToAddress from './src/seedToAddress.js';
 import seedToPublicKey from './src/seedToPublicKey.js';
 import seedToPrivateKey from './src/seedToPrivateKey.js';
 import publicKeyToSegwitAddress from './src/publicKeyToSegwitAddress.js';
-import seedPrivateKeyToEthereumAddress from './src/seedPrivateKeyToEthereumAddress.js';
+import seedToEthereumAddress from './src/seedToEthereumAddress.js';
 import exchangeRate from './src/exchangeRate.js';
 import coins from './src/coins.js';
 import depositLimit from './src/depositLimit.js';
@@ -60,8 +60,8 @@ export default class Elrn {
     publicKeyToSegwitAddress(publicKey, derivePath, network) {
         return publicKeyToSegwitAddress.call(this.options, publicKey, derivePath, network);
     }
-    seedPrivateKeyToEthereumAddress(seedPrivateKey, derivePath) {
-        return seedPrivateKeyToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
+    seedToEthereumAddress(seedPrivateKey, derivePath) {
+        return seedToEthereumAddress.call(this.options, seedPrivateKey, derivePath);
     }
     exchangeRate(pair) {
         return exchangeRate.call(this.options, pair);

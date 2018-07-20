@@ -9,7 +9,7 @@ const config = require(__dirname + '/config/options.js');
 const elrnClient = new Elrn(config);
 
 suite('xPub to Coin Address', function() {
-    test('returns a coin address', function() {
+    test('returns a bitcoin coin address', function() {
         const addressNumber = 0;
         //mnemonic is -> strategy worth garlic gallery gesture happy trash boil ceiling weasel happy patrol
         //the extended account private key below is from the 0 account from the mnemonic above
@@ -17,4 +17,5 @@ suite('xPub to Coin Address', function() {
         
         assert.equal(address, '1LsMYT7CRunQ4njP1UjUDAeHQEqGxNVrUK');
     });
+    
 });

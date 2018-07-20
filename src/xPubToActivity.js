@@ -20,7 +20,6 @@ const slowXpubToActivity = function (xPubString, network) {
                   .then(function (response) {
                     resolve(response.data);
                   });
-
               }
           default:
               reject(new Error(`called xPubToUnspentActivity with unknown network: ${network}`));
