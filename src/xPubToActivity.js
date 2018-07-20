@@ -14,6 +14,14 @@ const slowXpubToActivity = function (xPubString, network) {
                     resolve(response.data);
                   });
               }
+              case 'ethereum': {
+                const url = `https://api.blockcypher.com/v1/eth/main/addrs/${xPubString}&cors=true`;
+                return axios.get(url)
+                  .then(function (response) {
+                    resolve(response.data);
+                  });
+
+              }
           default:
               reject(new Error(`called xPubToUnspentActivity with unknown network: ${network}`));
           }
