@@ -26,7 +26,12 @@ export default function prepareTransaction( destinationAddress , sendAmount , ac
             var ethereumTransactionPrep = async function(){
                 let address = await elrnClient.xPrvToEthereumAddress(xPriv, 'm/44\'/0\'/0')
                 let activity = await elrnClient.xPubToActivity(address, 'ethereum')
-
+                let unsignedTransaction = await elrnClient.activityToEthereumTx(activity, destinationAddress, sendAmount, null) 
+                
+                const transactionPackage = {
+                  preparedTransaction: unsignedTransaction
+                }
+                resolve(transactionPackage);
             }
 
             switch (accountInfo.network) {
