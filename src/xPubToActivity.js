@@ -14,6 +14,7 @@ const slowXpubToActivity = function (xPubString, network) {
                     resolve(response.data);
                   });
               }
+              //ethereum requires an address not an xpub!!!!!~~~~~~~~~~~~~~~~~~~~
               case 'ethereum': {
                 const url = `https://api.blockcypher.com/v1/eth/main/addrs/${xPubString}&cors=true`;
                 return axios.get(url)
